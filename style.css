@@ -1,0 +1,240 @@
+/* --- Variables Globales --- */
+:root {
+    --neon-blue: #00f7ff;
+    --neon-pink: #ff00ff;
+    /* Fondo oscuro */
+    --bg-dark: #03030a;
+    --bg-darker: #010105;
+    --text-light: #e0e0e0;
+    
+    /* CAMBIO: Fuente Varela Round para coincidir con el Logo */
+    --font-heading: 'Varela Round', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+
+body {
+    background-color: var(--bg-dark);
+    background-image: radial-gradient(circle at center, #0f0f1a 0%, var(--bg-darker) 100%);
+    color: var(--text-light);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+}
+
+/* --- UTILIDADES DE NEÓN --- */
+
+/* Textos Principales - Brillo bajo (2 capas) */
+.neon-text-blue {
+    color: #00f7ff;
+    text-shadow: 0 0  #fff, 0 0 10px var(--neon-blue);
+}
+
+.neon-text-pink {
+    color: #ff00ff;
+    text-shadow: 0 0  #fff, 0 0  var(--neon-pink);
+}
+
+/* NUEVO: Texto con Gradiente (Rosa a Azul) como la imagen */
+.texto-gradiente {
+    background-image: linear-gradient(to right, #ff00ff, #00f7ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 3px rgba(255, 0, 255, 0.4));
+    font-family: var(--font-heading);
+    /* Aseguramos que se vea bien grueso */
+    font-weight: 700; 
+}
+
+/* Textos Suaves - Brillo mínimo */
+.neon-text-blue-soft { color: var(--neon-blue); text-shadow: 0 0 4px var(--neon-blue); }
+.neon-text-pink-soft { color: var(--neon-pink); text-shadow: 0 0 4px var(--neon-pink); }
+
+/* Iconos */
+.neon-icon-blue { color: var(--neon-blue); filter: drop-shadow(0 0  var(--neon-blue)); }
+.neon-icon-pink { color: var(--neon-pink); filter: drop-shadow(0 0  var(--neon-pink)); }
+
+/* Botones */
+.btn-neon-blue {
+    display: inline-block; padding: 12px 30px; color: var(--neon-blue);
+    border: 2px solid var(--neon-blue); border-radius: 5px; text-decoration: none;
+    font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 2px;
+    transition: 0.3s; 
+    box-shadow: 0 0 8px var(--neon-blue), inset 0 0 8px var(--neon-blue);
+    text-shadow: none;
+}
+.btn-neon-blue:hover { background: var(--neon-blue); color: var(--bg-dark); box-shadow: 0 0 20px var(--neon-blue), inset 0 0 20px var(--neon-blue); }
+
+.btn-neon-pink {
+    display: inline-block; width: 100%; padding: 12px; background: transparent;
+    color: var(--neon-pink); border: 2px solid var(--neon-pink); border-radius: 5px;
+    font-family: var(--font-heading); font-weight: bold; cursor: pointer;
+    transition: 0.3s; box-shadow: 0 0 5px var(--neon-pink), inset 0 0 5px var(--neon-pink);
+    text-shadow: none;
+}
+.btn-neon-pink:hover { background: var(--neon-pink); color: var(--bg-dark); }
+
+/* Cajas */
+.neon-box-pink { border: 2px solid var(--neon-pink); border-radius: 15px; padding: 2rem; box-shadow: 0 0 10px var(--neon-pink), inset 0 0 10px rgba(255, 0, 255, 0.1); background: rgba(0,0,0,0.7); }
+.neon-box-blue { border: 2px solid var(--neon-blue); border-radius: 50px; box-shadow: 0 0 10px var(--neon-blue), inset 0 0 5px rgba(0, 247, 255, 0.2); }
+
+
+/* --- Navbar --- */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 5%; 
+    background: rgba(2, 2, 10, 0.95); backdrop-filter: blur(10px);
+    position: fixed; width: 100%; top: 0; z-index: 1000;
+    border-bottom: 1px solid rgba(0, 247, 255, 0.1);
+}
+
+./* --- ESTILOS DEL LOGO CIRCULAR (NUEVO) --- */
+
+.navbar {
+    /* Ajustamos un poco el padding del navbar para que entre el círculo */
+    padding: 0.5rem 5%; 
+    /* ... resto de estilos del navbar ... */
+}
+
+/* El contenedor circular que crea el efecto de borde de luz */
+.logo-circulo {
+    width: 130px;  /* Ancho fijo */
+    height: 130px; /* Alto fijo igual al ancho para que sea un cuadrado exacto */
+    border-radius: 50%; /* Esto convierte el cuadrado en un círculo perfecto */
+    
+    /* Centramos la imagen dentro del círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* EL EFECTO "BORDE SIN LÍNEA" (Resplandor Neón Azul) */
+    /* Sombra externa + Sombra interna (inset) para un efecto de "tubo" */
+    box-shadow: 0 0 25px var(--neon-blue), inset 0 0 15px rgba(0, 247, 255, 0.3);
+    
+    /* Fondo oscuro semitransparente para que resalte sobre el fondo de la web */
+    background-color: rgba(2, 2, 10, 0.8);
+    
+    transition: 0.3s;
+}
+
+/* Ajuste de la imagen para que quepa dentro del círculo */
+.logo-img {
+    height: auto;
+    width: 95px; /* Reducimos un poco el ancho para que entre bien con margen */
+    display: block;
+    /* Opcional: un pequeño filtro para que la imagen brille más dentro del círculo */
+    filter: drop-shadow(0 0 5px var(--neon-blue));
+    border-radius: 50%;
+}
+
+/* Efecto Hover opcional: aumenta el brillo al pasar el mouse */
+.logo-circulo:hover {
+     box-shadow: 0 0 40px var(--neon-blue), inset 0 0 20px var(--neon-blue);
+}
+
+.nav-links { list-style: none; display: flex; align-items: center; }
+.nav-links li a {
+    text-decoration: none; color: var(--text-light); margin-left: 2rem;
+    font-family: var(--font-heading); font-size: 0.9rem; transition: 0.3s;
+}
+.nav-links li a:hover, .nav-links li a.active { color: var(--neon-pink); text-shadow: 0 0 4px var(--neon-pink); }
+.menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; margin-top: 10px;}
+
+
+/* --- Secciones Generales --- */
+.section-container { padding: 8rem 5% 4rem; text-align: center; }
+.section-title { font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 3rem; text-transform: uppercase; }
+
+
+/* --- Hero Section --- */
+.hero {
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    text-align: center; padding-top: 120px;
+}
+
+/* Títulos estilo Outline (Contorno) para parecerse al Logo Geeksy */
+.mega-title { 
+    font-family: var(--font-heading); 
+    font-size: 3.5rem; 
+    line-height: 1.2;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--neon-pink); /* Borde blanco */
+    text-shadow: 0 0  var(--neon-pink);
+}
+
+.sub-mega-title { 
+    font-family: var(--font-heading); 
+    font-size: 5rem; 
+    margin: 1rem 0; 
+    color: transparent;
+    -webkit-text-stroke: 3px var(--neon-blue); /* Borde azul grueso */
+    text-shadow: 0 0 15px var(--neon-blue);
+}
+
+.hero-subtitle { font-size: 1.2rem; margin-bottom: 2rem; }
+
+
+/* --- Servicios --- */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; }
+.service-card {
+    padding: 2rem; background: rgba(255, 255, 255, 0.02);
+    border-radius: 15px; transition: 0.3s;
+}
+.service-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.04); }
+.service-card i { font-size: 4rem; margin-bottom: 1.5rem; display: block; }
+.service-card h3 { font-family: var(--font-heading); margin-bottom: 1rem; }
+
+
+/* --- Contacto --- */
+.contact-container { display: flex; gap: 2rem; align-items: stretch; }
+.contact-wrapper, .map-wrapper { flex: 1; }
+.neon-input-pink input, .neon-input-pink textarea {
+    width: 100%; background: transparent; border: none;
+    border-bottom: 2px solid var(--neon-pink); padding: 15px 10px;
+    color: var(--text-light); font-family: var(--font-body); font-size: 1rem;
+    outline: none; transition: 0.3s; margin-bottom: 1.5rem;
+}
+.neon-input-pink input:focus, .neon-input-pink textarea:focus { box-shadow: 0 3px 5px -3px var(--neon-pink); } 
+.map-wrapper iframe { border-radius: 13px; }
+
+
+/* --- Footer --- */
+footer { text-align: center; padding: 2rem; background: #02020a; font-size: 0.9rem; color: #888; }
+
+
+/* --- Botón Flotante WhatsApp --- */
+.whatsapp-float {
+    position: fixed; bottom: 30px; right: 30px; background: #000;
+    color: var(--neon-blue); padding: 15px 25px; text-decoration: none;
+    display: flex; align-items: center; gap: 15px; z-index: 999; transition: 0.3s;
+    box-shadow: 0 0 10px var(--neon-blue);
+}
+.whatsapp-float i { font-size: 2rem; }
+.whatsapp-float span { font-family: var(--font-heading); font-size: 1.5rem; letter-spacing: 1px; text-shadow: none;} 
+.whatsapp-float:hover { background: var(--neon-blue); color: #000; box-shadow: 0 0 25px var(--neon-blue); }
+.whatsapp-float:hover span { color: #000; }
+
+
+/* --- Responsive Mobile --- */
+@media (max-width: 768px) {
+    .navbar { padding: 0.5rem 5%; align-items: center;}
+    .logo-img { height: 70px; }
+    .logo-img { width: 70px; } /* Ajuste del tamaño del logo en móvil */
+    .logo-circulo {
+        width: 80px;  /* Ancho fijo */
+        height: 80px; /* Alto fijo igual al ancho para que sea un cuadrado exacto */
+    }
+    .menu-toggle { display: block; margin-top: 0; }
+    .nav-links {
+        position: fixed; top: 90px; left: -100%; width: 100%; height: calc(100vh - 90px);
+        background: var(--bg-dark); flex-direction: column; align-items: center; justify-content: center; transition: 0.4s;
+    }
+    .nav-links.active { left: 0; }
+    .nav-links li { margin: 2rem 0; }
+    .hero { padding-top: 100px; }
+    .mega-title { font-size: 2.2rem; } .sub-mega-title { font-size: 3.5rem; }
+    .contact-container { flex-direction: column; } .map-wrapper { height: 300px; }
+    .whatsapp-float { padding: 10px 20px; bottom: 20px; right: 20px; }
+    .whatsapp-float i { font-size: 1.5rem; } .whatsapp-float span { font-size: 1.2rem; }
+}

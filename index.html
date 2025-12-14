@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geeksy - Servicio Técnico PC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Roboto:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo-container">
+            <div class="logo-circulo"> <img src="/logo.png" alt="Geeksy Logo" class="logo-img">
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio" class="active">HOME</a></li>
+            <li><a href="#servicios">SERVICIOS</a></li>
+            <li><a href="#contacto">CONTACTO</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <i class="fas fa-bars neon-text-blue"></i>
+        </div>
+    </nav>
+
+    <header id="inicio" class="hero">
+        <div class="hero-content">
+            <h1 class="neon-text-pink mega-title">MANTENIMIENTO<br>DE COMPUTADORAS</h1>
+            <h2 class="neon-text-blue sub-mega-title">GEEKSY</h2>
+            <p class="hero-subtitle neon-text-blue-soft">Innovación en soporte técnico y reparación</p>
+            <a href="#contacto" class="btn-neon-blue">Solicitar Presupuesto</a>
+        </div>
+    </header>
+
+    <section id="servicios" class="section-container">
+        <h2 class="section-title neon-text-pink">SERVICIOS</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-tools neon-icon-pink"></i>
+                <h3 class="neon-text-pink-soft">Reparación de Hardware</h3>
+                <p>Diagnóstico y reemplazo de componentes dañados, pantallas y periféricos.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-chart-line neon-icon-blue"></i>
+                <h3 class="neon-text-blue-soft">Optimización</h3>
+                <p>Limpieza profunda de software, eliminación de virus y aceleración del sistema.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-network-wired neon-icon-pink"></i>
+                <h3 class="neon-text-pink-soft">Redes y Conectividad</h3>
+                <p>Configuración de WiFi, routers y solución de problemas de internet.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="section-container contact-section">
+        <h2 class="section-title neon-text-pink">CONTACTO</h2>
+        <div class="contact-container">
+            <div class="contact-wrapper neon-box-pink">
+                <form action="https://formspree.io/f/xanrkvnq" method="POST" class="neon-form">
+
+                    <div class="input-group neon-input-pink">
+                        <input type="text" name="nombre" placeholder="Tu Nombre" required>
+                    </div>
+
+                    <div class="input-group neon-input-pink">
+                        <input type="email" name="email" placeholder="Tu Email" required>
+                    </div>
+
+                    <div class="input-group neon-input-pink">
+                        <textarea name="mensaje" rows="5"
+                            required>Hola Geeksy, quiero información sobre el servicio técnico.</textarea>
+                    </div>
+
+                    <button type="submit" class="btn-neon-pink">Enviar Consulta</button>
+                </form>
+            </div>
+
+            <div class="map-wrapper neon-box-pink">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d436.3828872544647!2d-58.788701364004034!3d-27.507098456222906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjfCsDMwJzI1LjMiUyA1OMKwNDcnMTguNiJX!5e1!3m2!1ses!2sar!4v1765751563999!5m2!1ses!2sar"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Geeksy.com.ar - Todos los derechos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/5493794145743?text=Hola%20Geeksy,%20quiero%20informaci%C3%B3n%20sobre%20el%20servicio%20t%C3%A9cnico"
+        class="whatsapp-float neon-box-blue" target="_blank">
+        <i class="fab fa-whatsapp"></i> <span>3794145743</span>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
