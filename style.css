@@ -189,7 +189,7 @@ body {
 /* --- Contacto --- */
 .contact-container { display: flex; gap: 2rem; align-items: stretch; }
 .contact-wrapper, .map-wrapper { flex: 1; }
-.map-wrapper { height: 450px; }
+.map-wrapper { height: 450px; display: none; }
 .neon-input-pink input, .neon-input-pink textarea {
     width: 100%; background: transparent; border: none;
     border-bottom: 2px solid var(--neon-pink); padding: 15px 10px;
